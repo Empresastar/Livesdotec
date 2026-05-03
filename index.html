@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft PE - Download & Canal</title>
+    <style>
+        /* Reset e Fundo Animado */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #4da0ff 0%, #82c4ff 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Container Principal (Estilo Menu MC) */
+        .card {
+            background-color: #c6c6c6;
+            border: 6px solid #000;
+            border-top-color: #fff;
+            border-left-color: #fff;
+            border-right-color: #555;
+            border-bottom-color: #555;
+            padding: 30px;
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            box-shadow: 0 20px 0px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        h1 {
+            color: #3f3f3f;
+            font-size: 26px;
+            text-shadow: 3px 3px 0px #fff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        /* Estilo dos Botões */
+        .btn {
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 4px solid #000;
+            text-shadow: 2px 2px 0px #000;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        /* Botão Download com Animação de Pulso */
+        .btn-download {
+            background-color: #3fa02c;
+            border-top-color: #5df043;
+            border-left-color: #5df043;
+            border-right-color: #1a4d12;
+            border-bottom-color: #1a4d12;
+            animation: pulse 2s infinite;
+        }
+
+        /* Botão YouTube do TecBanido */
+        .btn-youtube {
+            background-color: #cd201f;
+            border-top-color: #ff4d4d;
+            border-left-color: #ff4d4d;
+            border-right-color: #600e0d;
+            border-bottom-color: #600e0d;
+        }
+
+        /* Efeitos de Interação */
+        .btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            border-top-color: #000;
+            border-left-color: #000;
+        }
+
+        /* Animação de Pulsar para o Download */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(93, 240, 67, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(93, 240, 67, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(93, 240, 67, 0); }
+        }
+
+        /* Partículas de Blocos ao Fundo */
+        .cube {
+            position: absolute;
+            background: rgba(255,255,255,0.3);
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            animation: float 8s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(110vh) rotate(0deg); }
+            to { transform: translateY(-10vh) rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #444;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cube" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="cube" style="left: 25%; animation-delay: 2s; width: 60px; height: 60px;"></div>
+    <div class="cube" style="left: 70%; animation-delay: 5s;"></div>
+    <div class="cube" style="left: 85%; animation-delay: 1s; width: 30px; height: 30px;"></div>
+
+    <div class="card">
+        <h1>MINECRAFT PE</h1>
+        <span class="subtitle">VERSÃO 1.26.13 | TECBANIDO</span>
+        
+        <a href="https://mcpedl.org/uploads_files/07-04-2026/minecraft-26-13.apk" class="btn btn-download">
+            BAIXAR AGORA 📥
+        </a>
+
+        <a href="https://youtube.com/@tecbanido?si=0iiBjExDJoXWp80k" class="btn btn-youtube" target="_blank">
+            CANAL TECBANIDO 🎥
+        </a>
+
+        <div class="footer">
+            Verificado e Seguro ✅
+        </div>
+    </div>
+
+</body>
+</html>
