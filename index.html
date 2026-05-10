@@ -3,660 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft PE 1.26.13 - Baixe Agora! | TecBanido</title>
+    <title>TecBanido | Minecraft PE 1.26.13 - Download Seguro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=VT323&display=swap');
+        :root {
+            --primary: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.3);
+            --bg-dark: #05070a;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: 'Pixelify Sans', cursive;
-            background: #87CEEB;
-            position: relative;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.05) 0%, transparent 35%);
         }
 
-        /* Fundo Parallax Pixelado */
-        .sky {
-            background: linear-gradient(180deg, #87CEEB 0%, #98D8E8 40%, #B0E6FF 100%);
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .clouds {
+        /* --- NAVEGAÇÃO --- */
+        nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .cloud {
-            position: absolute;
-            background: white;
-            opacity: 0.9;
-            animation: float-cloud linear infinite;
-        }
-
-        @keyframes float-cloud {
-            from { transform: translateX(-100px); }
-            to { transform: translateX(calc(100vw + 100px)); }
-        }
-
-        /* Barra do topo estilo MC */
-        .top-bar {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 8px 15px;
+            top: 0; width: 100%;
+            z-index: 1000;
+            padding: 15px 5%;
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #000;
-            box-shadow: 0 3px 0 rgba(255,255,255,0.3);
         }
 
-        .logo-text {
-            color: #fff;
-            font-size: 20px;
-            text-shadow: 3px 3px 0 #000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: -1px;
         }
+        .logo span { color: var(--primary); }
 
-        .verified {
-            background: #5df043;
-            color: #000;
-            padding: 4px 12px;
-            font-size: 14px;
-            font-weight: 700;
-            box-shadow: 2px 2px 0 #000;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Hero com pixelart */
+        /* --- HERO SECTION --- */
         .hero {
-            text-align: center;
-            margin-bottom: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 140px 20px 60px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr; /* Lado a lado no PC */
+            gap: 40px;
+            align-items: center;
         }
 
-        .title {
-            font-size: 56px;
-            color: #fff;
-            text-shadow: 
-                5px 5px 0 #000,
-                6px 6px 0 rgba(0,0,0,0.3);
-            margin-bottom: 15px;
+        .hero-content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 1.1;
-            animation: bounce 2s ease-in-out infinite;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff 0%, #64748b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-dim);
+            margin-bottom: 30px;
+            max-width: 500px;
         }
 
-        .subtitle {
-            font-size: 24px;
-            color: #FFD700;
-            text-shadow: 3px 3px 0 #000;
+        /* --- CARD DE DOWNLOAD --- */
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .badge-live::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
             margin-bottom: 25px;
         }
 
-        /* Badges de confiança estilo minecraft */
-        .trust-row {
+        .stat-box {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-box span { display: block; font-size: 0.65rem; color: var(--text-dim); }
+        .stat-box b { font-size: 1rem; color: #fff; }
+
+        /* --- BOTÕES --- */
+        .btn-primary {
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 10px 18px;
-            font-size: 16px;
-            border: 3px solid #555;
-            border-top-color: #aaa;
-            border-left-color: #aaa;
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Grid de conteúdo */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        /* Info lateral estilo inventário */
-        .info-box {
-            background: #C6C6C6;
-            border: 5px solid;
-            border-color: #fff #000 #000 #fff;
-            padding: 0;
-            box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
-        }
-
-        .info-header {
-            background: #8B8B8B;
-            border-bottom: 3px solid #000;
-            border-top: 2px solid #fff;
-            padding: 12px 15px;
-            font-size: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 0 #000;
-            text-align: center;
-        }
-
-        .info-content {
-            padding: 20px;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .stat {
-            background: #8B8B8B;
-            border: 3px solid;
-            border-color: #555 #fff #fff #555;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: #ddd;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .stat-value {
-            font-size: 22px;
-            color: #FFD700;
-            text-shadow: 2px 2px 0 #000;
-            font-weight: 700;
-        }
-
-        /* Lista de features estilo crafting */
-        .features-box {
-            background: #5df043;
-            border: 4px solid #000;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: inset 0 0 0 2px #fff;
-        }
-
-        .features-box h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #000;
-        }
-
-        .features-box ul {
-            list-style: none;
-        }
-
-        .features-box li {
-            padding: 8px 0;
-            color: #000;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
             gap: 10px;
-            font-weight: 600;
-        }
-
-        .features-box li:before {
-            content: "▪";
+            background: var(--primary);
             color: #000;
-            font-size: 20px;
-        }
-
-        /* Botões estilo MC */
-        .btn-mc {
-            background: #8B8B8B;
-            border: 4px solid;
-            border-color: #fff #000 #000 #fff;
-            color: #fff;
             padding: 18px;
-            font-size: 18px;
-            font-family: 'Pixelify Sans', cursive;
-            font-weight: 700;
-            text-shadow: 2px 2px 0 #000;
-            cursor: pointer;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px var(--primary-glow);
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
             display: block;
+            text-align: center;
+            padding: 14px;
+            margin-top: 12px;
+            color: #fff;
             text-decoration: none;
-            text-align: center;
-            margin-bottom: 15px;
-            transition: all 0.1s;
-            position: relative;
-        }
-
-        .btn-mc:hover {
-            background: #a0a0a0;
-            border-color: #fff #555 #555 #fff;
-        }
-
-        .btn-mc:active {
-            border-color: #000 #fff #fff #000;
-            transform: translate(2px, 2px);
-        }
-
-        .btn-download {
-            background: #5df043;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .btn-download:hover {
-            background: #6fff50;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(93, 240, 67, 0.5); }
-            50% { box-shadow: 0 0 25px rgba(93, 240, 67, 0.9); }
-        }
-
-        .btn-youtube {
-            background: #cd201f;
-        }
-
-        .btn-youtube:hover {
-            background: #e02a28;
-        }
-
-        /* Caixa de aviso de segurança */
-        .warning-box {
-            background: #FFD700;
-            border: 5px solid #000;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            box-shadow: inset 0 0 0 3px #FFA500;
-        }
-
-        .warning-box:before {
-            content: "⚠️";
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 40px;
-            background: #FFD700;
-            padding: 5px 15px;
-            border: 5px solid #000;
-        }
-
-        .warning-box h4 {
-            text-align: center;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #000;
-        }
-
-        .warning-box p {
-            color: #000;
-            font-size: 14px;
-            line-height: 1.5;
-            text-align: center;
-            margin: 5px 0;
+            font-size: 0.9rem;
             font-weight: 600;
-        }
-
-        /* Conteúdo principal estilo livro */
-        .main-content {
-            background: #f4e8d0;
-            border: 6px solid #8B4513;
-            padding: 30px;
-            box-shadow: 
-                5px 5px 0 rgba(0,0,0,0.3),
-                inset 0 0 0 3px #d4c4a8;
-            position: relative;
-        }
-
-        .main-content:before,
-        .main-content:after {
-            content: "";
-            position: absolute;
-            background: #8B4513;
-        }
-
-        .main-content:before {
-            top: 15px;
-            left: -12px;
-            width: 6px;
-            height: calc(100% - 30px);
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: #8B4513;
-            margin-bottom: 20px;
-            text-align: center;
-            border-bottom: 3px solid #8B4513;
-            padding-bottom: 10px;
-        }
-
-        .desc-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #3a3a3a;
-            margin-bottom: 20px;
-            font-family: 'VT323', monospace;
-            font-size: 20px;
-        }
-
-        /* Reviews estilo chat do MC */
-        .reviews {
-            margin-top: 30px;
-        }
-
-        .review {
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid #000;
-            border-top-color: #555;
-            border-left-color: #555;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            font-family: 'VT323', monospace;
-            font-size: 18px;
-        }
-
-        .review-author {
-            color: #FFD700;
-            font-weight: 700;
-            margin-bottom: 3px;
-        }
-
-        .review-text {
-            color: #fff;
-            line-height: 1.4;
-        }
-
-        /* Footer estilo barra de debug */
-        .footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-family: 'VT323', monospace;
-            font-size: 18px;
-            margin-top: 50px;
-            border-top: 3px solid #555;
-        }
-
-        .footer a {
-            color: #5df043;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Blocos flutuantes decorativos */
-        .floating-blocks {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .block {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-size: contain;
-            animation: float-block 20s linear infinite;
             opacity: 0.6;
+            transition: 0.3s;
         }
 
-        @keyframes float-block {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
+        .btn-secondary:hover { opacity: 1; }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        /* Responsivo */
+        .feat-item {
+            padding: 25px;
+            background: rgba(255,255,255,0.01);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .feat-item h3 { margin-bottom: 10px; font-size: 1.1rem; }
+        .feat-item p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 850px) {
-            .content-grid {
+            .hero {
+                grid-template-columns: 1fr; /* Empilha no celular */
+                padding-top: 100px;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .features {
                 grid-template-columns: 1fr;
             }
-
-            .info-box {
-                order: 2;
-            }
-
-            .title {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 18px;
+            
+            .download-card {
+                margin: 0 auto;
+                max-width: 400px;
             }
         }
 
-        @media (max-width: 500px) {
-            .stat-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-row {
-                flex-direction: column;
-                align-items: center;
-            }
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-    
-    <div class="sky">
-        <!-- Nuvens animadas -->
-        <div class="clouds">
-            <div class="cloud" style="top: 50px; width: 80px; height: 40px; animation-duration: 40s; animation-delay: 0s;"></div>
-            <div class="cloud" style="top: 120px; width: 100px; height: 50px; animation-duration: 50s; animation-delay: -10s;"></div>
-            <div class="cloud" style="top: 200px; width: 70px; height: 35px; animation-duration: 60s; animation-delay: -20s;"></div>
-            <div class="cloud" style="top: 80px; width: 90px; height: 45px; animation-duration: 45s; animation-delay: -30s;"></div>
-        </div>
 
-        <!-- Blocos flutuantes -->
-        <div class="floating-blocks">
-            <div class="block" style="left: 10%; animation-delay: 0s;">🟫</div>
-            <div class="block" style="left: 30%; animation-delay: 5s;">🟩</div>
-            <div class="block" style="left: 50%; animation-delay: 10s;">⬛</div>
-            <div class="block" style="left: 70%; animation-delay: 15s;">🟦</div>
-            <div class="block" style="left: 85%; animation-delay: 8s;">🟥</div>
-        </div>
+    <nav>
+        <div class="logo">TEC<span>BANIDO</span></div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">OFICIAL</div>
+    </nav>
 
-        <!-- Barra superior -->
-        <div class="top-bar">
-            <div class="logo-text">
-                <span>⛏️</span>
-                <span>TECBANIDO</span>
-            </div>
-            <div class="verified">✓ VERIFICADO</div>
-        </div>
-
-        <!-- Container principal -->
-        <div class="container">
+    <main class="hero">
+        <div class="hero-content">
+            <div class="badge-live">VERSÃO 1.26.13 ATIVA</div>
+            <h1>O Minecraft que você ama, sem limites.</h1>
+            <p>Tenha acesso à build estável com Multiplayer 100% funcional, Shaders liberados e todos os itens da atualização 2026.</p>
             
-            <!-- Hero -->
-            <div class="hero">
-                <h1 class="title">MINECRAFT PE</h1>
-                <div class="subtitle">🎮 VERSÃO 1.26.13 COMPLETA 🎮</div>
-                
-                <div class="trust-row">
-                    <div class="badge">
-                        <span>🛡️</span>
-                        <span>100% Seguro</span>
-                    </div>
-                    <div class="badge">
-                        <span>⚡</span>
-                        <span>142 MB</span>
-                    </div>
-                    <div class="badge">
-                        <span>⭐</span>
-                        <span>1.2M Downloads</span>
-                    </div>
+            <div style="display: flex; gap: 15px; justify-content: inherit;">
+                <!-- Trust icons discretos -->
+                <div style="display: flex; align-items: center; gap: 5px; color: var(--text-dim); font-size: 0.8rem;">
+                    🛡️ Verificado
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px; color: var(--text-dim); font-size: 0.8rem;">
+                    ⚡ Download Direto
+                </div>
+            </div>
+        </div>
+
+        <div class="download-card">
+            <div class="stats">
+                <div class="stat-box">
+                    <span>TAMANHO</span>
+                    <b>142 MB</b>
+                </div>
+                <div class="stat-box">
+                    <span>ARQUITETURA</span>
+                    <b>ARM64-v8a</b>
+                </div>
+                <div class="stat-box">
+                    <span>COMPATIBILIDADE</span>
+                    <b>Android 5+</b>
+                </div>
+                <div class="stat-box">
+                    <span>DOWNLOADS</span>
+                    <b>1.2M</b>
                 </div>
             </div>
 
-            <!-- Grid de conteúdo -->
-            <div class="content-grid">
-                
-                <!-- Conteúdo principal -->
-                <div class="main-content">
-                    <h2 class="section-title">📦 Sobre Esta Versão</h2>
-                    
-                    <p class="desc-text">
-                        Fala galera! Aqui é o TecBanido trazendo pra vocês a versão mais atualizada 
-                        do Minecraft PE. Essa build tá incrível, com todos os recursos desbloqueados, 
-                        sem travamento e com multiplayer funcionando 100%.
-                    </p>
+            <a href="#" class="btn-primary">
+                BAIXAR AGORA
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
 
-                    <p class="desc-text">
-                        Testei pessoalmente em vários celulares aqui e tá rodando liso. Funciona em 
-                        qualquer Android 5.0 pra cima. É só baixar, instalar e começar a jogar. 
-                        Simples assim!
-                    </p>
+            <a href="https://youtube.com/@tecbanido" class="btn-secondary" target="_blank">Ver tutorial no YouTube</a>
+        </div>
+    </main>
 
-                    <p class="desc-text">
-                        Se tiver qualquer dúvida, cola lá no canal que eu respondo todo mundo. 
-                        Deixa o like, se inscreve e ativa o sininho! 🔔
-                    </p>
+    <section class="features">
+        <div class="feat-item">
+            <h3>🌍 Servidores Oficiais</h3>
+            <p>Conecte-se ao Realms, The Hive e Mineplex sem erros de licença ou conexão.</p>
+        </div>
+        <div class="feat-item">
+            <h3>🛠️ Suporte a Add-ons</h3>
+            <p>Instale mods, texturas e pacotes de comportamento sem restrições na pasta do jogo.</p>
+        </div>
+        <div class="feat-item">
+            <h3>📱 Otimização Mobile</h3>
+            <p>Código limpo que garante mais FPS mesmo em aparelhos com 2GB de RAM.</p>
+        </div>
+    </section>
 
-                    <!-- Reviews -->
-                    <div class="reviews">
-                        <h3 class="section-title">💬 O Pessoal Tá Falando</h3>
-                        
-                        <div class="review">
-                            <div class="review-author">&lt;Rafael_Gamer&gt;</div>
-                            <div class="review-text">
-                                Cara, baixei ontem e já tô viciado! Funcionou de primeira aqui. 
-                                Valeu demais TecBanido!
-                            </div>
-                        </div>
+    <footer>
+        <p>© 2026 TecBanido - Desenvolvido para a comunidade gamer.</p>
+        <p style="margin-top: 10px; opacity: 0.5;">Minecraft é propriedade da Mojang Studios.</p>
+    </footer>
 
-                        <div class="review">
-                            <div class="review-author">&lt;MariaCraft&gt;</div>
-                            <div class="review-text">
-                                Finalmente consegui jogar com meus amigos! Tava tentando há dias 
-                                e só aqui deu certo. Obrigada! ❤️
-                            </div>
-                        </div>
-
-                        <div class="review">
-                            <div class="review-author">&lt;LucasBlocks&gt;</div>
-                            <div class="review-text">
-                                Melhor versão que já testei. Sem lag, sem bug, sem nada. 
-                                Canal top demais mano! 🔥
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sidebar de info -->
-                <div class="info-box">
-                    <div class="info-header">📋 INFORMAÇÕES</div>
-                    <div class="info-content">
-                        
-                        <!-- Stats -->
-                        <div class="stat-grid">
-                            <div class="stat">
-                                <div class="stat-label">Tamanho</div>
-                                <div class="stat-value">142 MB</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-label">Android</div>
-                                <div class="stat-value">5.0+</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-label">Downloads</div>
-                                <div class="stat-value">1.2M+</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-label">Nota</div>
-                                <div class="stat-value">⭐ 4.9</div>
-                            </div>
-                        </div>
-
-                        <!-- Features -->
-                        <div class="features-box">
-                            <h3>✨ O QUE TEM DE BOM</h3>
-                            <ul>
-                                <li>Todos biomas e mobs novos</li>
-                                <li>Multiplayer online total</li>
-                                <li>Mods e skins ilimitados</li>
-                                <li>Gráficos em HD</li>
-                                <li>Modo criativo completo</li>
-                                <li>Zero anúncios chatos</li>
-                            </ul>
-                        </div>
-
-                        <!-- Warning -->
-                        <div class="warning-box">
-                            <h4>ARQUIVO SEGURO</h4>
-                            <p>✅ Testado em antivírus</p>
-                            <p>✅ Sem vírus ou malware</p>
-                            <p>✅ Verificado pelo canal</p>
-                        </div>
-
-                        <!-- Botões -->
-                        <a href="https://mcpedl.org/uploads_files/07-04-2026/minecraft-26-13.apk" class="btn-mc btn-download">
-                            📥 BAIXAR MINECRAFT PE
-                        </a>
-
-                        <a href="https://youtube.com/@tecbanido?si=0iiBjExDJoXWp80k" class="btn-mc btn-youtube" target="_blank">
-                            🎥 VER TUTORIAL NO YOUTUBE
-                        </a>
-
-                        <div style="text-align: center; margin-top: 15px; font-size: 13px; color: #555;">
-                            Atualizado em 07/04/2026
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-    
+</body>
+</html>
